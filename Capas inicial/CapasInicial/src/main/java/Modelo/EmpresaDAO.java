@@ -27,7 +27,7 @@ public class EmpresaDAO {
     private static final String SQL_DELETE = "DELETE FROM empresa WHERE codigoempresa=?";
     private static final String SQL_QUERY = "SELECT codigoempresa, nombreempresa FROM empresa WHERE codigoempresa = ?";
 
-    public List<Empresa> select() {
+     public List<Empresa> select() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -44,7 +44,7 @@ public class EmpresaDAO {
                                
                 empresa = new Empresa();
                 empresa.setCodigoEmpresa(codigoempresa);
-                empresa.setCodigoEmpresa(codigoempresa);
+                empresa.setNombreEmpresa(nombreempresa);
                                 
                 empresas.add(empresa);
             }

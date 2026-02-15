@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.Empresa;
 import Modelo.EmpresaDAO;
+import java.util.List;
 
 /**
  *
@@ -32,22 +33,24 @@ public class Principal {
         System.out.println(empresa.toString());
         
         //select
-        empresadao.select();
-        empresa.setCodigoEmpresa(4);
-        empresa = empresadao.query(empresa);
-        System.out.println(empresa.toString());
+        Empresa empresaModificar = new Empresa();
+        EmpresaDAO empresadaoModi = new EmpresaDAO();
+        List<Empresa> empresas = empresadaoModi.select();
+        for (Empresa lista : empresas) {
+        System.out.println(lista.toString());
+        }
         
         //delete
         Empresa empresaEliminar = new Empresa();
-        empresa.setCodigoEmpresa(13);
+        empresa.setCodigoEmpresa(12);
         empresa = empresadao.query(empresa);
         empresadao.delete(empresa);
         System.out.println(empresa.toString());
         
         //update
-        empresa.setCodigoEmpresa(16); 
+        empresa.setCodigoEmpresa(17); 
         empresa = empresadao.query(empresa); 
-        empresa.setNombreEmpresa("Grindells");
+        empresa.setNombreEmpresa("Gitane");
         empresadao.update(empresa); 
         System.out.println(empresa.toString());
                 
